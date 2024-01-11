@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Me quieres?</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        #message {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #buttonContainer {
+            display: flex;
+            gap: 10px;
+        }
+
+        #yesButton, #noButton {
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="message">¿Me quieres?</div>
+<div id="buttonContainer">
+    <button id="yesButton" onclick="mostrarmiamor()">Sí</button>
+    <button id="noButton" onclick="moverboton()">No</button>
+</div>
+
+<script>
+    function mostrarmiamor() {
+        alert('Yo también te quiero mucho 🥺💘');
+        window.location.href = 'https://www.youtube.com/watch?v=dmAfiY7yomo';
+    }
+
+    function moverboton() {
+        var button = document.getElementById('noButton');
+        var maxX = window.innerWidth - button.clientWidth;
+        var maxY = window.innerHeight - button.clientHeight;
+
+        var newX = Math.floor(Math.random() * maxX);
+        var newY = Math.floor(Math.random() * maxY);
+
+        button.style.position = 'absolute';
+        button.style.left = newX + 'px';
+        button.style.top = newY + 'px';
+        var seed = Date.now();
+        var nalet = Math.floor(Math.random()*5)+1;
+        switch(nalet){
+            case 1:
+                alert('¿Como asi? 💔😪');
+            break;
+            case 2:
+                alert('Deberias de hacerlo 🙃');
+            break;
+            case 3:
+                alert('Bueno pero entonces me amas, ¿No? 🥺');
+            break;
+            case 4:
+                alert('Pensé que si me querias 💔😞');
+            break;
+            case 5:
+                alert('Ya sabia 😭');
+        }
+        
+    }
+</script>
+
+</body>
+</html>
